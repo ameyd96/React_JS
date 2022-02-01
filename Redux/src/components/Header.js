@@ -5,6 +5,7 @@ import classes from "./Header.module.css";
 
 const Header = () => {
   const dispatch = useDispatch();
+
   const logoutHandler = () => {
     dispatch(authActions.logout());
   };
