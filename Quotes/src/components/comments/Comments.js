@@ -11,6 +11,7 @@ import CommentList from "./CommentsList";
 const Comments = () => {
   const [isAddingComment, setIsAddingComment] = useState(false);
   const params = useParams();
+  
 
   const {
     sendRequest,
