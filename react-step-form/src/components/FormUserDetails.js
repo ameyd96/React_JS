@@ -1,0 +1,65 @@
+import React, { Component } from "react";
+
+import AppBar from "material-ui/AppBar";
+import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
+import TextField from "material-ui/TextField";
+import RaisedButton from "material-ui/RaisedButton";
+
+export class FormUserDetails extends Component {
+  continue = (e) => {
+    e.preventDefault();
+    this.props.nextStep();
+  };
+  render() {
+    const { values, handleChange } = this.props;
+    return (
+      <MuiThemeProvider>
+        <>
+          <AppBar title="Enter User Details" />
+
+          <TextField
+            hintText="First Name"
+            floatingLabelText="First Name"
+            onChange={handleChange("firstName")}
+            //defaultValue={values.firstName}
+          />
+
+          <br></br>
+
+          <TextField
+            hintText="Last Name"
+            floatingLabelText="Last Name"
+            onChange={handleChange("lasttName")}
+            //defaultValue={values.lastName}
+          />
+
+          <br></br>
+
+          <TextField
+            hintText="Email"
+            floatingLabelText="Email"
+            onChange={handleChange("email")}
+            //defaultValue={values.firstName}
+          />
+
+          <br></br>
+
+          <RaisedButton 
+          label="Continue"
+          primary={true}
+          style={styles.button}
+          onClick={this.continue}
+          />
+        </>
+      </MuiThemeProvider>
+    );
+  }
+}
+
+
+const styles ={
+    button :{
+        margin :15
+    }
+}
+export default FormUserDetails;
